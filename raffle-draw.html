@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+    body,
+    html {
+        background: rgb(2, 0, 36);
+        background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    }
+
+    .main-heading {
+        margin-top: 5% !important;
+        text-align: center;
+        font-size: 3rem;
+        font-family: 'Press Start 2P', cursive;
+    }
+
+    .alphabet-div {
+        text-align: center;
+    }
+
+    .alphabet-btn {
+        margin-top: 3% !important;
+        text-align: center;
+        font-size: 2rem;
+        font-family: 'Press Start 2P', cursive;
+        background: rgb(63, 94, 251);
+        background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+    }
+
+    .alphabet-display {
+        margin-top: 3% !important;
+        font-size: 2rem;
+        font-family: 'Press Start 2P', cursive;
+    }
+
+    .starting-num {
+        font-size: 1rem;
+        font-family: 'Press Start 2P', cursive;
+        margin-left: 20%;
+        margin-top: 3% !important;
+    }
+
+    .ending-num {
+        font-size: 1rem;
+        font-family: 'Press Start 2P', cursive;
+        margin-left: 20%;
+        margin-top: 3% !important;
+    }
+
+    #number-display {
+        text-align: center;
+        margin-top: 3% !important;
+        font-size: 2rem;
+        font-family: 'Press Start 2P', cursive;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raffle Draw</title>
+
+    <!-- jquery cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- bootstrap cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h1 class="main-heading">Raffle Draw Generator</h1>
+        </div>
+    </div>
+
+    <div class="alphabet-div container ">
+        <div class="row">
+            <button class="alphabet-btn" onclick="drawAlphabetLetter()">Draw Raffle Page</button>
+            <h3 class="alphabet-display"></h3>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <label class="starting-num">Starting Number</label>
+            </div>
+            <div class="col">
+                <label class="ending-num">Ending Number</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <input type="number" class="starting-num" name="starting-num-input" id="starting-num-input">
+            </div>
+            <div class="col">
+                <input type="number" class="ending-num" name="ending-num-input" id="ending-num-input">
+            </div>
+        </div>
+        <div class="row">
+            <button class="alphabet-btn" onclick="drawRaffleNum()">Draw Raffle Number</button>
+        </div>
+        <div class="row">
+            <h3 id="number-display"></h3>
+        </div>
+    </div>
+
+    <!-- bootstrap cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+<script>
+
+    function drawAlphabetLetter() {
+
+        // return a random number between 1 and 26
+        const randomNumber = Math.floor(Math.random() * 26) + 1;
+        let letter;
+
+        // assigning the alphabetic letter based on the random number
+        switch (randomNumber) {
+            case 1:
+                letter = "A";
+                break;
+            case 2:
+                letter = "B";
+                break;
+            case 3:
+                letter = "C";
+                break;
+            case 4:
+                letter = "D";
+                break;
+            case 5:
+                letter = "E";
+                break;
+            case 6:
+                letter = "F";
+                break;
+            case 7:
+                letter = "G";
+                break;
+            case 8:
+                letter = "H";
+                break;
+            case 9:
+                letter = "I";
+                break;
+            case 10:
+                letter = "J";
+                break;
+            case 11:
+                letter = "K";
+                break;
+            case 12:
+                letter = "L";
+                break;
+            case 13:
+                letter = "M";
+                break;
+            case 14:
+                letter = "N";
+                break;
+            case 15:
+                letter = "O";
+                break;
+            case 16:
+                letter = "P";
+                break;
+            case 17:
+                letter = "Q";
+                break;
+            case 18:
+                letter = "R";
+                break;
+            case 19:
+                letter = "S";
+                break;
+            case 20:
+                letter = "T";
+                break;
+            case 21:
+                letter = "U";
+                break;
+            case 22:
+                letter = "V";
+                break;
+            case 23:
+                letter = "W";
+                break;
+            case 24:
+                letter = "X";
+                break;
+            case 25:
+                letter = "Y";
+                break;
+            case 26:
+                letter = "Z";
+                break;
+        }
+
+        $('.alphabet-display').html(`${letter}`);
+    }
+
+    function drawRaffleNum() {
+        const startingNum = Number($('#starting-num-input').val());
+        const endingNum = Number($('#ending-num-input').val());
+        const randomNumber = Math.floor(Math.random() * (endingNum - startingNum)) + startingNum;
+
+        console.log("randomNumber", randomNumber);
+        $('#number-display').html(`${randomNumber}`);
+
+        $('#starting-num-input').val('');
+        $('#ending-num-input').val('');
+    }
+
+
+</script>
+
+</html>
